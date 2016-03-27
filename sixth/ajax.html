@@ -1,0 +1,25 @@
+<<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ajax</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <h4>Ajax</h4>
+  <div id="ajax"></div>
+</body>
+</html>
+<script type="text/javascript">
+  var get = function(url, callback){
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState === 4){
+        callback(xhr.responseText, xhr.status);
+      };
+    };
+    xhr.open('GET', url);
+    xhr.send(null);
+  };
+</script>
